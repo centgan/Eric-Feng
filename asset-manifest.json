@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6f2c6967.css",
+    "main.js": "/static/js/main.8c2b8fe9.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Vex.png": "/static/media/Vex.219b890e64e11cf7e10f.png",
+    "static/media/IMG_3011.jpg": "/static/media/IMG_3011.20f55782525071be2996.jpg",
+    "static/media/car.jpg": "/static/media/car.61e75b09c79e6d1d0d1a.jpg",
+    "static/media/MealPrep.png": "/static/media/MealPrep.472cd0f0ce3908fa6f48.png",
+    "static/media/Nanotechnology.png": "/static/media/Nanotechnology.0df78974243954ba19e0.png",
+    "static/media/gym.jpg": "/static/media/gym.fb0749a8cdb98a881e2e.jpg",
+    "static/media/Fantasy.png": "/static/media/Fantasy.0a9c25ada7bc04bbbaeb.png",
+    "static/media/Finance.png": "/static/media/Finance.821da637a800eb5c0480.png",
+    "static/media/TradeBot.png": "/static/media/TradeBot.d8991c55e26ba7c94ff8.png",
+    "static/media/linkedin.png": "/static/media/linkedin.4cd0fc4df9dd7438e610.png",
+    "static/media/Github.jpg": "/static/media/Github.65acb5b58a98c9ed7d65.jpg",
+    "index.html": "/index.html",
+    "main.6f2c6967.css.map": "/static/css/main.6f2c6967.css.map",
+    "main.8c2b8fe9.js.map": "/static/js/main.8c2b8fe9.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f2c6967.css",
+    "static/js/main.8c2b8fe9.js"
+  ]
+}
