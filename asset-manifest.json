@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Eric-Feng/static/css/main.b3cf6930.css",
-    "main.js": "/Eric-Feng/static/js/main.d2f66f1b.js",
+    "main.js": "/Eric-Feng/static/js/main.f580277f.js",
     "static/js/787.1ed0c42c.chunk.js": "/Eric-Feng/static/js/787.1ed0c42c.chunk.js",
     "static/media/Vex.png": "/Eric-Feng/static/media/Vex.219b890e64e11cf7e10f.png",
     "static/media/IMG_3011.jpg": "/Eric-Feng/static/media/IMG_3011.20f55782525071be2996.jpg",
@@ -17,11 +17,11 @@
     "static/media/Github.jpg": "/Eric-Feng/static/media/Github.65acb5b58a98c9ed7d65.jpg",
     "index.html": "/Eric-Feng/index.html",
     "main.b3cf6930.css.map": "/Eric-Feng/static/css/main.b3cf6930.css.map",
-    "main.d2f66f1b.js.map": "/Eric-Feng/static/js/main.d2f66f1b.js.map",
+    "main.f580277f.js.map": "/Eric-Feng/static/js/main.f580277f.js.map",
     "787.1ed0c42c.chunk.js.map": "/Eric-Feng/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b3cf6930.css",
-    "static/js/main.d2f66f1b.js"
+    "static/js/main.f580277f.js"
   ]
 }
