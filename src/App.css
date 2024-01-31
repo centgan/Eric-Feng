@@ -197,6 +197,34 @@
   background: #aeb52b;
 }
 
+.learn {
+  position: absolute;
+  margin-top: 550px;
+  margin-left: 825px;
+}
+
+.but {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.but:hover,
+.but:focus {
+  background-color: #07c;
+}
+
+.but:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
 .carousel-button {
   display: flex;
   justify-content: space-evenly;
@@ -259,7 +287,7 @@
 }
 
 .passion-item {
-  height: 500px;
+  /*height: 500px;*/
   background-color: #50C9CE;
   border-radius: 20px;
   box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
@@ -319,6 +347,35 @@
   background-color: #4E878C;
   padding-bottom: 10px;
   height: 200px
+}
+
+.top {
+  text-align: center;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+  /*justify-content: space-evenly;*/
+}
+
+.columns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.individual {
+  margin-top: 100px;
+  text-align: center;
+  background-color: #61dafb;
+  border-radius: 15px;
+}
+
+.input {
+  border-radius: 5px;
+  height: 25px;
+  width: 250px;
 }
 
 .App-logo {

@@ -5,7 +5,7 @@ interface carousel_inter {
   width: string
 }
 
-export const Carousel_Item:FC<carousel_inter> = ({item, width}) => {
+const Carousel_Item:FC<carousel_inter> = ({item, width}) => {
   let classN:string;
   let classI: string;
   let classP = "";
@@ -56,3 +56,5 @@ export const Carousel_Item:FC<carousel_inter> = ({item, width}) => {
     </div>
   )
 }
+
+export default Carousel_Item;

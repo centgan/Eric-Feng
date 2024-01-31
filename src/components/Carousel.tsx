@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from "react";
-import {Carousel_Item} from "./Carousel_Item";
 import fantasy from "../img/Fantasy.png";
 import vex from "../img/Vex.png";
 import meal from "../img/MealPrep.png";
 import trade from "../img/TradeBot.png";
+// import {Link} from "react-router-dom";
+import Carousel_Item from "./Carousel_Item";
+import { useNavigate } from "react-router-dom";
 
 
-export const Carousel = () => {
+const Carousel = () => {
+  const navigate = useNavigate();
   const items = [
     {
       title: 'Fantasy Swimming',
@@ -31,7 +34,7 @@ export const Carousel = () => {
     {
       title: 'Vex Robotics',
       image: vex,
-      description: 'I led a Vex Robotics team to the international stage in Dallas, Texas. The robot was built with ' +
+      description: 'I led a Vex Robotics team to the Vex Robotics World Championships in Dallas, Texas. The robot was built with ' +
         'provided materials in Fusion 360. This allowed us to work together as a team virtually to completely designing of the robot.' +
         'It also saved time and money by CADing the robot first as mistakes and simulations can be run virtually. The robot was ' +
         'programmed in C++ with the use of the Vex library. Concepts such as Pure Pursuit, Dubin\'s Path PID were programmed ' +
@@ -44,6 +47,7 @@ export const Carousel = () => {
         "Fusion 360",
         "PID control",
         "Leadership",
+        "World championship"
       ],
       index: 1
     },
@@ -132,7 +136,14 @@ export const Carousel = () => {
           <label htmlFor="radio-3" className="man-button"></label>
           <label htmlFor="radio-4" className="man-button"></label>
         </div>
+        <div className="learn">
+          <button className="but" onClick={() => navigate('/projects')}>See All Projects</button>
+        </div>
       </div>
     </div>
   )
 }
+
+
+
+export default Carousel;
