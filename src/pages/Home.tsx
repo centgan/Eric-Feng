@@ -188,7 +188,6 @@ const HomePage = () => {
       <nav className="nav-bar">
         <div className="nav-content">
           <div className="nav-logo">
-            <span>⚡</span>
             Eric Feng
           </div>
           <div className="nav-links">

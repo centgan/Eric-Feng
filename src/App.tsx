@@ -7,7 +7,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Eric-Feng">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:projectId" element={<ProjectDetail />} />
