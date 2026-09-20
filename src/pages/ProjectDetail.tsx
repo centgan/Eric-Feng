@@ -27,22 +27,6 @@ const ProjectDetail = () => {
 
     return (
         <div className="project-detail-container">
-            {/* Floating particles */}
-            <div className="particles-container">
-                {[...Array(15)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="particle"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
-                            animationDuration: `${10 + Math.random() * 20}s`
-                        }}
-                    />
-                ))}
-            </div>
-
             {/* Back button */}
             <button onClick={() => navigate('/')} className="back-button">
                 <span className="back-arrow">←</span> Back to Home
@@ -50,10 +34,7 @@ const ProjectDetail = () => {
 
             {/* Hero Section */}
             <section className={`project-hero ${isVisible ? 'visible' : ''}`}>
-                <div className="project-hero-bg">
-                    <div className="blob blob-1"></div>
-                    <div className="blob blob-2"></div>
-                </div>
+
                 <div className="project-hero-content">
                     <div className={`project-hero-emoji ${project.emojiClass}`}>
                         {project.emoji}

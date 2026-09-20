@@ -168,22 +168,6 @@ const HomePage = () => {
 
   return (
     <div className="portfolio-container">
-      {/* Floating particles */}
-      <div className="particles-container">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${10 + Math.random() * 20}s`
-            }}
-          />
-        ))}
-      </div>
-
       {/* Navigation */}
       <nav className="nav-bar">
         <div className="nav-content">
@@ -206,11 +190,7 @@ const HomePage = () => {
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
-        <div className="hero-bg-blobs">
-          <div className="blob blob-1"></div>
-          <div className="blob blob-2"></div>
-          <div className="blob blob-3"></div>
-        </div>
+
 
         <div className="hero-content">
           {!gridRevealed ? (
@@ -403,7 +383,7 @@ const HomePage = () => {
 
               <div className="education-term">
                 <div className="education-badge">
-                  <span>Currently finished my 3B Term!</span>
+                  <span>Graduating in Apr 2027</span>
                 </div>
               </div>
             </div>
