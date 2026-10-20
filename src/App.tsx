@@ -6,8 +6,10 @@ import ProjectDetail from "./pages/ProjectDetail";
 
 
 function App() {
+  const basename = window.location.pathname.startsWith('/Eric-Feng') ? '/Eric-Feng' : '';
+
   return (
-    <BrowserRouter basename="/Eric-Feng">
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/project/:projectId" element={<ProjectDetail />} />

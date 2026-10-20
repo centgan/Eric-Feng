@@ -14,16 +14,16 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
     {
-        id: "ai-trade-bot",
-        title: "AI Trade Bot",
+        id: "rl-trade-bot",
+        title: "RL Trade Bot",
         tech: "Python, TensorFlow, PyTorch",
         desc: "Reinforcement learning algorithm (A2C) built for a real world trading application",
         emoji: "🧠🤖",
         emojiClass: "project-emoji-purple",
         overview: "Built an A2C algorithm which trades using LSTM-based actor–critic networks, " +
-          "which are parallelized across multiple worker agents and a centralized learner agent. The system consists of a custom trading " +
-          "environment to match the real world market, a memory-efficient data pipeline for multi-year historical data training, " +
-          "and a modular indicator system which supports multiple different trading methodologies.",
+            "which are parallelized across multiple worker agents and a centralized learner agent. The system consists of a custom trading " +
+            "environment to match the real world market, a memory-efficient data pipeline for multi-year historical data training, " +
+            "and a modular indicator system which supports multiple different trading methodologies.",
         features: [
             "Distributed A2C architecture consisting of multiple worker agents which share experiences to a centralized learner agent",
             "Designed a realistic trading environment including but not limited to commissions, order management and liquidation orders etc...",
@@ -42,13 +42,53 @@ export const projectsData: ProjectData[] = [
             },
             {
                 problem: "Designing the reward function for optimal realized and unrealized profits while still maintaining a swing trading focus",
-                solution: "Utilized a hybrid reward function (30% unrealized profit and 70% realized profit) to encourage position closure and managing variance. A commission cost is placed in to discourage over-trading and "
+                solution: "Utilized a hybrid reward function (30% unrealized profit and 70% realized profit) to encourage position closure and managing variance. A commission cost is placed in to discourage over-trading."
             }
         ],
         results: [
             "Achieved ~1.35 Sharpe ratio training, outperforming a buy-and-hold baseline by ~18% return (2011–2020)",
             "Improved training stability, reduced reward variance by 40% after introducing the hybrid reward function as well as an A2C advantage normalization",
             "Successfully scaled training of 4.7M observations while maintaining <2GB RAM usage, enabling multi-year back-testing on any hardware",
+        ]
+    },
+    {
+        id: "trade-bot",
+        title: "Trade Bot",
+        tech: "Python, OANDA REST, Topstep / ProjectX, Pandas, NumPy",
+        desc: "Production rule-based intraday trading system and prop-firm farm simulator trading Gold and NASDAQ futures.",
+        emoji: "📈⚡",
+        emojiClass: "project-emoji-blue",
+        overview: "Engineered an autonomous rule-based intraday trading system and prop-firm account simulator " +
+            "trading Gold and NASDAQ futures across OANDA REST and Topstep/ProjectX. The architecture features an abstract broker interface, " +
+            "finite state machine (FSM) strategy classes, a shared backtest/live dispatcher, and an automated ForexFactory news filter. " +
+            "Designed a high-fidelity prop-firm 'farm' simulator modeling Combine-to-funded lifecycles, real-time intraday trailing drawdowns, " +
+            "and payout mechanics, supported by forensic audits that eliminated backtest artifacts and verified 100% live-to-backtest execution parity.",
+        features: [
+            "Intraday Strategy Engine: FSM-driven execution running orb30 (NAS100 30-min opening range breakout) and goldgap with dynamic volatility-scaled risk sizing.",
+            "Broker-Agnostic Infrastructure: Broker ABC with production OANDA REST and Topstep/ProjectX adapters, featuring per-leg Auto-OCO stop/target brackets.",
+            "Prop 'Farm' Simulator: Models Topstep Combines (funded lifecycle, real-time intraday trailing max-loss, scaling plans, and consistency rules) with Monte-Carlo and walk-forward engines.",
+            "Execution Safety & Controls: Live production monitoring with real-time intraday drawdown tracking, automated flatten-at-pass logic, and an operator kill-switch runbook.",
+            "Forensic Parity Auditing: Live-vs-backtest validation framework confirming 42/42 historical trades matched with zero discrepancies.",
+        ],
+        challenges: [
+            {
+                problem: "Eliminating spurious backtest alpha and hidden execution artifacts (look-ahead re-arms, idealized fills, and resolution discrepancies).",
+                solution: "Audited 50+ quantitative and retail edge investigations (ORB variants, ICT fractal/SMT, Mean Reversion, R-Breaker). Killed false edges—such as an opendrive leg whose edge vanished under realistic 10-minute execution lag—and maintained a strict tested/dead research backlog."
+            },
+            {
+                problem: "Optimizing per-trade expectancy (R) paradoxically reduced overall net profit in prop-firm evaluation environments.",
+                solution: "Identified that prop-account net is dollars-per-calendar-time under evaluation costs rather than dollars-per-trade. Discarded filters that improved per-trade R (e.g., slow-EMA trend filter: 2× net R) because they slashed opportunity throughput and cut combined net by 42%."
+            },
+            {
+                problem: "Managing real-time intraday trailing drawdown constraints enforced by prop firms during volatile news events.",
+                solution: "Built an intraday tick-level drawdown monitor modeling real-time (not EOD) max-loss rules, integrated automated ForexFactory news filtering with daily caching, and deployed flatten-at-pass triggers."
+            }
+        ],
+        results: [
+            "Doubled strategy net from $125k → $232k (at 2% risk, 2023–2026) through exit-engineering; flatten-at-pass logic added $187k → $225k",
+            "Deployed live trading pipeline with auto-bracket orders, automated news filters, and a real-time drawdown kill-switch across OANDA and Topstep",
+            "Achieved 100% execution fidelity between live fills and backtesting engine (42/42 historical trades matched with 0 mismatches)",
+            "Empirically tested 50+ independent edges, cataloging verified failure modes to prevent re-litigating dead ends"
         ]
     },
     {
@@ -59,8 +99,8 @@ export const projectsData: ProjectData[] = [
         emoji: "🦾🤖",
         emojiClass: "project-emoji-green",
         overview: "Browser based 2D/3D CAD application built with React, Three.js, and OpenCASCADE (OCCT), presented by " +
-          "Electron. Using Electron makes it easy to leverage the React ecosystem while integrating high-performance " +
-          "geometric modeling through C++ native addons.",
+            "Electron. Using Electron makes it easy to leverage the React ecosystem while integrating high-performance " +
+            "geometric modeling through C++ native addons.",
         features: [
             "Utilizes OCCT geometric kernel through a Node.js addon, which enables precise parametric geometry and TypeScript–C++ communication.",
             "Supports a constraint system which is designed to maintain relationships such as parallelism and perpendicularity as sketches are edited.",

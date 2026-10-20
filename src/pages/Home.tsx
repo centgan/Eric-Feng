@@ -62,7 +62,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'education', 'passions', 'contact'];
+      const sections = ['home', 'about', 'projects', 'education', 'capstone', 'passions', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -175,7 +175,7 @@ const HomePage = () => {
             Eric Feng
           </div>
           <div className="nav-links">
-            {['Home', 'About', 'Projects', 'Education', 'Contact'].map(item => (
+            {['Home', 'About', 'Projects', 'Education', 'Capstone', 'Contact'].map(item => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -391,6 +391,72 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Capstone */}
+      <section id="capstone" className="section" data-animate="">
+        <div className={`section-content ${isVisible.capstone ? 'visible' : 'hidden'}`}>
+          <h2 className="section-title">Senior Capstone</h2>
+          <p className="section-subtitle">Tesselaite — Automating semiconductor device engineering</p>
+
+          <div className="capstone-card">
+            <div className="capstone-header">
+              <div className="capstone-badge-container">
+                <span className="capstone-badge">🎓 Nanotechnology Engineering Capstone</span>
+                <span className="capstone-milestone-badge">Spring 2027 Milestone</span>
+              </div>
+              <div className="capstone-title-row">
+                <h3 className="capstone-title">Tesselaite</h3>
+                <span className="capstone-role-badge">Role: Software Engineer</span>
+              </div>
+              <p className="capstone-tagline">
+                Automating the workflow of semiconductor device engineers
+              </p>
+            </div>
+
+            <div className="capstone-grid">
+              <div className="capstone-pillar">
+                <div className="capstone-pillar-icon">⚠️</div>
+                <h4 className="capstone-pillar-title">The Bottleneck</h4>
+                <p className="capstone-pillar-text">
+                  Semiconductor device engineering relies heavily on expensive, manual trial-and-error parameter sweeps. 
+                  With 75% of chip projects running behind schedule and design iterations costing upwards of $100k+, 
+                  manually tuning multi-variable physical parameters (doping, layer thickness, junction depth, geometry) 
+                  burns critical compute and engineering time.
+                </p>
+              </div>
+
+              <div className="capstone-pillar">
+                <div className="capstone-pillar-icon">⚡</div>
+                <h4 className="capstone-pillar-title">AI TCAD Workflow</h4>
+                <p className="capstone-pillar-text">
+                  Tesselaite replaces brute-force sweeps with an active learning closed-loop optimization system: 
+                  Initial DOE (N=80) → TCAD Physics Simulation → Gaussian Process Surrogate Modeling → Bayesian Optimization. 
+                  The software automatically explores fabrication-feasible designs and outputs optimized, fabrication-ready GDSII files.
+                </p>
+              </div>
+
+              <div className="capstone-pillar">
+                <div className="capstone-pillar-icon">🔬</div>
+                <h4 className="capstone-pillar-title">Sim-to-Real Validation</h4>
+                <p className="capstone-pillar-text">
+                  Moving beyond software simulation: In-house physical validation by fabricating MIS 
+                  (Metal-Insulator-Semiconductor) capacitors in the cleanroom to empirically benchmark and calibrate 
+                  Tesselaite's predictions against real fabricated silicon devices.
+                </p>
+              </div>
+            </div>
+
+            <div className="capstone-tags">
+              <span className="capstone-tag">TCAD Simulation</span>
+              <span className="capstone-tag">Bayesian Optimization</span>
+              <span className="capstone-tag">Gaussian Processes</span>
+              <span className="capstone-tag">Semiconductor Physics</span>
+              <span className="capstone-tag">GDSII Layout</span>
+              <span className="capstone-tag">Cleanroom Fabrication</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Passions */}
       <section id="passions" className="section section-bg" data-animate="">
         <div className={`section-content ${isVisible.passions ? 'visible' : 'hidden'}`}>
@@ -411,7 +477,7 @@ const HomePage = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="contact-section" data-animate="s">
+      <section id="contact" className="contact-section" data-animate="">
         <div className={`section-content ${isVisible.contact ? 'visible' : 'hidden'}`} style={{ width: '100%' }}>
           <h2 className="section-title">Let's Connect!</h2>
 
