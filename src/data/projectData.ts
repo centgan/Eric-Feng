@@ -14,6 +14,47 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
     {
+        id: "imc-prosperity-2025",
+        title: "IMC Prosperity 2025",
+        tech: "Python, Quantitative Finance, Market Making, Statistical Arbitrage",
+        desc: "Ranked 11th in Canada in IMC Trading's global algorithmic trading challenge, deploying autonomous market making, arbitrage, and risk management systems.",
+        emoji: "🏆📈",
+        emojiClass: "project-emoji-gold",
+        overview: "Competed in the IMC Prosperity 2025 challenge—a high-stakes, 15-day global algorithmic trading competition organized by IMC Trading—ranking 11th in Canada. " +
+            "Engineered and deployed an autonomous Python trading system operating across multi-round simulated electronic markets featuring limit order books, " +
+            "evolving market regimes, and complex derivative and synthetic products. The architecture featured real-time fair-value estimation, " +
+            "dynamic inventory-skewed market making, statistical arbitrage across correlated assets, and defensive execution controls.",
+        features: [
+            "Autonomous Market Making: Formulated dynamic bid-ask quoting models around estimated micro-price and mid-market fair values, adjusting spread and order depth to capture liquidity premia while protecting against adverse selection.",
+            "Statistical Arbitrage & Pairs Trading: Modeled cointegration and pricing differentials across synthetic baskets, ETFs, and underlying assets, capturing mean-reversion profits when cross-asset spreads dislocated.",
+            "Dynamic Inventory & Risk Management: Implemented asymmetric quoting penalties and inventory decay functions to balance position limits and mitigate directional drawdown risk during volatile news cycles.",
+            "Order Book Analytics: Built high-throughput tick-by-tick order book processors computing order book imbalance (OBI), volume-weighted average price (VWAP), and book depth decay to forecast micro-structural price moves.",
+            "Simulation & Backtesting Harness: Developed a local backtesting and log replay environment to simulate round conditions, benchmark parameter configurations, and stress-test risk models before live round submissions.",
+        ],
+        challenges: [
+            {
+                problem: "Adverse selection and toxic flow from informed market orders eroding maker profits in illiquid and volatile rounds.",
+                solution: "Implemented an inventory-skewed quoting model combined with order book imbalance (OBI) signals to widen quotes or skew pricing against toxic order flow, minimizing unprofitable fills."
+            },
+            {
+                problem: "Abrupt market regime switches, scheduled news releases, and non-stationary asset dynamics across successive competition rounds.",
+                solution: "Engineered modular strategy classes with configurable volatility thresholds and automated circuit breakers that throttled quote sizing and widened spreads during extreme market turbulence."
+            },
+            {
+                problem: "Stringent per-tick runtime latency and memory constraints enforced within IMC's sandboxed execution environment.",
+                solution: "Vectorized signal calculations and state tracking with NumPy, caching order book states and eliminating redundant computations to consistently execute orders within tight per-round execution windows."
+            }
+        ],
+        results: [
+            "Ranked 11th in Canada among hundreds of university teams and top collegiate algorithmic traders nationwide",
+            "Maintained consistent profitability and positive PnL across rounds through robust risk controls and adverse selection mitigation",
+            "Successfully deployed an autonomous multi-asset trading engine handling market making, statistical arbitrage, and dynamic hedging",
+        ],
+        links: [
+            { label: "IMC Prosperity", url: "https://prosperity.imc.com/" }
+        ]
+    },
+    {
         id: "rl-trade-bot",
         title: "RL Trade Bot",
         tech: "Python, TensorFlow, PyTorch",
@@ -46,7 +87,7 @@ export const projectsData: ProjectData[] = [
             }
         ],
         results: [
-            "Achieved ~1.35 Sharpe ratio training, outperforming a buy-and-hold baseline by ~18% return (2011–2020)",
+            "Achieved ~0.82 Sharpe ratio in testing, outperforming a buy-and-hold baseline by ~4% return (2011–2020)",
             "Improved training stability, reduced reward variance by 40% after introducing the hybrid reward function as well as an A2C advantage normalization",
             "Successfully scaled training of 4.7M observations while maintaining <2GB RAM usage, enabling multi-year back-testing on any hardware",
         ]
